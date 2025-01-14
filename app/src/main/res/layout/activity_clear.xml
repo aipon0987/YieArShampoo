@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/clear_haikei">
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#A8000000"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Result"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="10"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"/>
+
+    </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/clear_shampoo"/>
+
+        <Button
+            android:id="@+id/reStart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="88dp"
+            android:backgroundTint="@color/background_buttom_color"
+            android:text="もう1回！"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/string_blue"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"/>
+
+    <Button
+        android:id="@+id/gotoTop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:backgroundTint="@color/background_buttom_color"
+        android:text="トップに戻る"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/string_blue"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="200dp"/>
+

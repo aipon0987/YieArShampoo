@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/game_haikei"
+    tools:context=".GameActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#A8000000"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/timer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+        
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="285dp"
+        android:layout_height="410dp"
+        android:src="@drawable/game_normal"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/tap_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:text="めちゃタップ！！"
+        android:textColor="@color/string_blue"
+        android:layout_gravity="bottom|center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/background_buttom_color"
+        android:elevation="30dp"/>
+
+
+</FrameLayout>
+
+
