@@ -52,16 +52,17 @@
             android:layout_gravity="bottom"
             android:layout_marginStart="20dp"/>
 
-    <Button
-        android:id="@+id/gotoTop_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:backgroundTint="@color/background_buttom_color"
-        android:text="トップに戻る"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:textColor="@color/string_blue"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="200dp"/>
+        <Button
+            android:id="@+id/gotoTop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="88dp"
+            android:backgroundTint="@color/background_buttom_color"
+            android:text="トップに戻る"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/string_blue"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="200dp"/>
 
+</FrameLayout>

@@ -27,23 +27,16 @@
     </FrameLayout>
 
     <ImageView
+        android:id="@+id/shampoo"
         android:layout_width="285dp"
         android:layout_height="410dp"
         android:src="@drawable/game_normal"
         android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/tap_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:text="めちゃタップ！！"
-        android:textColor="@color/string_blue"
-        android:layout_gravity="bottom|center"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:backgroundTint="@color/background_buttom_color"
-        android:elevation="30dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/renda"/>
 
 
 </FrameLayout>
