@@ -33,6 +33,14 @@
         android:src="@drawable/game_normal"
         android:layout_gravity="center"/>
 
+    <ImageView
+        android:id="@+id/action_panch"
+        android:layout_width="410dp"
+        android:layout_height="481dp"
+        android:src="@drawable/panch"
+        android:layout_gravity="bottom|start"
+        android:visibility="gone"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"

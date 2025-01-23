@@ -1,5 +1,9 @@
 package com.example.yiearshampoo;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +34,8 @@ public class GameActivity extends AppCompatActivity {
     private TextView timerText;
 
     private ImageView shampoo;
+    private View actionPunch;
+    private AnimatorSet punchAnimatorSet;
     private CountDownTimer timer;
     private int count = 0;
 
@@ -45,13 +51,20 @@ public class GameActivity extends AppCompatActivity {
         });
 
         shampoo = findViewById(R.id.shampoo);
+        actionPunch = findViewById(R.id.action_panch);
         timerText = findViewById(R.id.timer_text);
         rendaView = findViewById(R.id.renda);
+
+        punchActionSetting();
+
 
         rendaView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ++count;
+                if (punchAnimatorSet.isRunning()) return;
+                punchAnimatorSet.start();
+                shampoo.setImageResource(R.drawable.game_panch_shampoo);
 
             }
         });
@@ -86,5 +99,29 @@ public class GameActivity extends AppCompatActivity {
 
             }
         };
+    }
+
+    private void punchActionSetting(){
+        ObjectAnimator moveRight = ObjectAnimator.ofFloat(actionPunch, "translationX", -1000f, 0f);
+        moveRight.setDuration(300);
+        ObjectAnimator moveUp = ObjectAnimator.ofFloat(actionPunch, "translationY", 1000f, 0f);
+        moveUp.setDuration(300);
+        punchAnimatorSet = new AnimatorSet();
+        punchAnimatorSet.playTogether(moveRight, moveUp);
+        punchAnimatorSet.addListener(new AnimatorListenerAdapter() {
+
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                actionPunch.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                actionPunch.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }
