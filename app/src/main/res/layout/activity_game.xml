@@ -41,6 +41,14 @@
         android:layout_gravity="bottom|start"
         android:visibility="gone"/>
 
+    <ImageView
+        android:id="@+id/action_kick"
+        android:layout_width="410dp"
+        android:layout_height="481dp"
+        android:src="@drawable/kick"
+        android:layout_gravity="bottom|start"
+        android:visibility="gone"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"

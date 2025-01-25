@@ -36,6 +36,8 @@ public class GameActivity extends AppCompatActivity {
     private ImageView shampoo;
     private View actionPunch;
     private AnimatorSet punchAnimatorSet;
+    private View actionKick;
+    private AnimatorSet kickAnimatorSet;
     private CountDownTimer timer;
     private int count = 0;
 
@@ -52,10 +54,12 @@ public class GameActivity extends AppCompatActivity {
 
         shampoo = findViewById(R.id.shampoo);
         actionPunch = findViewById(R.id.action_panch);
+        actionKick = findViewById(R.id.action_panch);
         timerText = findViewById(R.id.timer_text);
         rendaView = findViewById(R.id.renda);
 
         punchActionSetting();
+        kickActionSerring();
 
 
         rendaView.setOnClickListener(new View.OnClickListener() {
@@ -94,9 +98,7 @@ public class GameActivity extends AppCompatActivity {
                 Intent intent = ClearActivity
                         .newIntent(GameActivity.this, count);
                 startActivity(intent);
-
-
-
+                
             }
         };
     }
@@ -121,6 +123,29 @@ public class GameActivity extends AppCompatActivity {
             public void onAnimationStart(Animator animation) {
                 super.onAnimationStart(animation);
                 actionPunch.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+    private void kickActionSerring(){
+        ObjectAnimator moveleft = ObjectAnimator.ofFloat(actionKick, "translationX",1000f, 0f);
+        moveleft.setDuration(300);
+        ObjectAnimator moveUp = ObjectAnimator.ofFloat(actionKick, "translationY", 1000f, 0f);
+        moveUp.setDuration(300);
+        kickAnimatorSet = new AnimatorSet();
+        kickAnimatorSet.playTogether(moveleft, moveUp);
+        kickAnimatorSet.addListener(new AnimatorListenerAdapter() {
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                actionKick.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                actionKick.setVisibility(View.VISIBLE);
             }
         });
     }
