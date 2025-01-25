@@ -24,6 +24,7 @@ public class ClearActivity extends AppCompatActivity {
         return intent;
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +56,4 @@ public class ClearActivity extends AppCompatActivity {
             }
         });
     }
-
-
-    }
+}
