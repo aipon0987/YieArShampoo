@@ -66,10 +66,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ++count;
-                if (punchAnimatorSet.isRunning()) return;
-                punchAnimatorSet.start();
-                shampoo.setImageResource(R.drawable.game_panch_shampoo);
-
+                if (count % 2 == 0) {
+                    if (punchAnimatorSet.isRunning()) return;
+                    punchAnimatorSet.start();
+                    shampoo.setImageResource(R.drawable.game_kick_shampoo);
+                } else {
+                    if (kickAnimatorSet.isRunning()) return;
+                    kickAnimatorSet.start();
+                    shampoo.setImageResource(R.drawable.game_kick_shampoo);
+                }
             }
         });
         initTimer();
