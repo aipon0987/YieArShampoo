@@ -3,6 +3,8 @@ package com.example.yiearshampoo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ClearActivity extends AppCompatActivity {
     private static final String KEY_TAP_COUNT = "key_tap_count";
+
+    private Button reStart;
+    private Button backToTop;
 
     public static Intent newIntent(Context context, int count){
         Intent intent = new Intent(context, ClearActivity.class);
@@ -29,5 +34,27 @@ public class ClearActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        reStart = findViewById(R.id.reStart_button);
+        reStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = GameActivity.newIntent(ClearActivity.this);
+                startActivity(intent);
+
+            }
+        });
+        backToTop = findViewById(R.id.backToTop_button);
+        backToTop.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = MainActivity.newIntent(ClearActivity.this);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
     }
-}
+
+
+    }

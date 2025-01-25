@@ -54,7 +54,7 @@ public class GameActivity extends AppCompatActivity {
 
         shampoo = findViewById(R.id.shampoo);
         actionPunch = findViewById(R.id.action_panch);
-        actionKick = findViewById(R.id.action_panch);
+        actionKick = findViewById(R.id.action_kick);
         timerText = findViewById(R.id.timer_text);
         rendaView = findViewById(R.id.renda);
 
@@ -69,7 +69,7 @@ public class GameActivity extends AppCompatActivity {
                 if (count % 2 == 0) {
                     if (punchAnimatorSet.isRunning()) return;
                     punchAnimatorSet.start();
-                    shampoo.setImageResource(R.drawable.game_kick_shampoo);
+                    shampoo.setImageResource(R.drawable.game_panch_shampoo);
                 } else {
                     if (kickAnimatorSet.isRunning()) return;
                     kickAnimatorSet.start();
