@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,8 @@ public class ClearActivity extends AppCompatActivity {
 
     private Button reStart;
     private Button backToTop;
+    private TextView rendaTextView;
+    private ImageView clearBoy;
 
     public static Intent newIntent(Context context, int count){
         Intent intent = new Intent(context, ClearActivity.class);
@@ -35,6 +39,12 @@ public class ClearActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        int count = getIntent().getIntExtra(KEY_TAP_COUNT, 0);
+
+        rendaTextView = findViewById(R.id.result_text);
+        clearBoy = findViewById(R.id.clear_boy);
+        rendaTextView.setText(String.valueOf(count));
 
         reStart = findViewById(R.id.reStart_button);
         reStart.setOnClickListener(new View.OnClickListener() {
@@ -55,5 +65,13 @@ public class ClearActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        if (count < 10) {
+            clearBoy.setImageResource(R.drawable.lose_boy);
+        } else if (count <= 30) {
+            clearBoy.setImageResource(R.drawable.clear_boy);
+        }  else if (count <= 50) {
+            clearBoy.setImageResource(R.drawable.clear_shampoo);
+        }
     }
 }

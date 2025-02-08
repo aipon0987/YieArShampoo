@@ -31,6 +31,7 @@ public class GameActivity extends AppCompatActivity {
         return new Intent(context, GameActivity.class);
     }
     private View rendaView;
+    private TextView rendaTextView;
     private TextView timerText;
 
     private ImageView shampoo;
