@@ -68,9 +68,9 @@ public class ClearActivity extends AppCompatActivity {
 
         if (count < 10) {
             clearBoy.setImageResource(R.drawable.lose_boy);
-        } else if (count <= 30) {
+        } else if (count >= 30) {
             clearBoy.setImageResource(R.drawable.clear_boy);
-        }  else if (count <= 50) {
+        }  else if (count >= 50) {
             clearBoy.setImageResource(R.drawable.clear_shampoo);
         }
     }
